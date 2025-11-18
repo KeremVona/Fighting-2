@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Manuever",
+    "description": "Focus on tight turns and low-speed combat to get on the enemy's tail. Best for lighter fighters.",
+    "beats": "Boom-and-Zoom",
+    "isBeatenBy": "Energy Fighting"
+  },
+  {
+    "title": "Boom-and-Zoom",
+    "description": "Use height and speed to dive, attack, and climb away quickly. Best for medium-large fighters.",
+    "beats": "Energy Fighting",
+    "isBeatenBy": "Manuever"
+  },
+  {
+    "title": "Energy Fighting",
+    "description": "Climb up to higher altitude and try to get the height advantage. Best for large fighters.",
+    "beats": "Manuever",
+    "isBeatenBy": "Boom-and-Zoom"
+  }
+]
