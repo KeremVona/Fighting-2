@@ -16,5 +16,47 @@
     "description": "Climb up to higher altitude and try to get the height advantage. Best for large fighters.",
     "beats": "Manuever",
     "isBeatenBy": "Boom-and-Zoom"
+  },
+  {
+    "title": "Stealth Ambush",
+    "description": "Utilize reduced radar cross-section to approach undetected and strike first. Best for advanced stealth fighters.",
+    "beats": "Beyond Visual Range",
+    "isBeatenBy": "Swarm Tactics"
+  },
+  {
+    "title": "Beyond Visual Range",
+    "description": "Engage enemies with long-range missiles before entering visual combat. Best for interceptors.",
+    "beats": "Manuever",
+    "isBeatenBy": "Stealth Ambush"
+  },
+  {
+    "title": "Swarm Tactics",
+    "description": "Overwhelm superior aircraft with sheer numbers and coordinated low-tech attacks. Best for mass-produced light fighters.",
+    "beats": "Energy Fighting",
+    "isBeatenBy": "Boom-and-Zoom"
+  },
+  {
+    "title": "Head-On Assault",
+    "description": "Strike with a frontal attack pass, risking collision for a high-damage kill. Best for heavily armed fighters.",
+    "beats": "Electronic Warfare",
+    "isBeatenBy": "Manuever"
+  },
+  {
+    "title": "Electronic Warfare",
+    "description": "Jam enemy radar and disable missile locks to force a close-range gunfight. Best for support aircraft.",
+    "beats": "Beyond Visual Range",
+    "isBeatenBy": "Head-On Assault"
+  },
+  {
+    "title": "Defensive Turtle",
+    "description": "Maximize armor and fly defensively to waste the enemy's ammunition before counter-attacking. Best for heavy strike aircraft.",
+    "beats": "Swarm Tactics",
+    "isBeatenBy": "Energy Fighting"
+  },
+  {
+    "title": "Drag and Bag",
+    "description": "One pilot flies defensively as bait to lure an enemy into a teammate's firing line. Best for wingman pairs.",
+    "beats": "Boom-and-Zoom",
+    "isBeatenBy": "Stealth Ambush"
   }
 ]
