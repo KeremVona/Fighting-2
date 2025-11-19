@@ -1,0 +1,14 @@
+[
+  {
+    "strategy_name": "Manuever",
+    "announcement_message": "Our scout planes have checked the enemy and their strategy is Manuever."
+  },
+  {
+    "strategy_name": "Boom-and-Zoom",
+    "announcement_message": "Our scout planes have checked the enemy and their strategy is Boom-and-Zoom."
+  },
+  {
+    "strategy_name": "Energy Fighting",
+    "announcement_message": "Our scout planes have checked the enemy and their strategy is Energy Fighting."
+  }
+]
