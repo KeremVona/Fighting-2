@@ -1,4 +1,3 @@
-import { useState } from "react";
 import StrategyList from "./StrategyList";
 
 const Phase2 = () => {

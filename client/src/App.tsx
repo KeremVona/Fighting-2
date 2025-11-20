@@ -7,8 +7,8 @@ import Phase2 from "./components/phases/phase2/Phase2";
 // Display phases according to the one currently playing 1/3
 
 function App() {
-  const [phase, setPhase] = useState(1);
-  const phasee = 2;
+  const [phase, setPhase] = useState(2);
+
   const handleCompletePhase = () => {
     setPhase((prev) => prev + 1);
   };
@@ -20,7 +20,7 @@ function App() {
         <div className="border-white border-2 p-2 bg-gray-500 border-solid w-250 h-140">
           <p className="">Phase {phase}</p>
           {phase == 1 && <PInput onPhaseComplete={handleCompletePhase} />}
-          {phasee == 2 && <Phase2 />}
+          {phase == 2 && <Phase2 />}
         </div>
       </div>
     </>

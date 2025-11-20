@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useFormState } from "react-dom";
 
 interface StrategyCardProps {
   title: string;
@@ -28,7 +27,7 @@ const StrategyCard: React.FC<StrategyCardProps> = ({
   }, [chosenStrategy]);
   return (
     <div className="group relative w-full max-w-sm overflow-hidden rounded-xl bg-slate-900 border border-slate-700 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-sky-500/50">
-      <div className="h-1 w-full bg-gradient-to-r from-sky-500 to-indigo-500" />
+      <div className="h-1 w-full bg-gradient-to-r from-gray-600 to-gray-200" />
 
       <div onClick={handleClick} className="p-6">
         <div className="mb-4">
