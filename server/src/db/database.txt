@@ -1,0 +1,13 @@
+goal: save the chosen strategy to the database
+
+user
+- user_id
+- username
+- wins
+- losses
+----------
+strategies
+- strategy_id
+- strategy_name
+- beats
+- is_beaten_by
