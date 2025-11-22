@@ -2,12 +2,14 @@ import { useState } from "react";
 import "./App.css";
 import PInput from "./components/phases/phase1/PInput";
 import Phase2 from "./components/phases/phase2/Phase2";
+import Loading from "./components/ui/Loading";
 
 // TO DO
 // Display phases according to the one currently playing 1/3
 
 function App() {
   const [phase, setPhase] = useState(2);
+  const [playPhase, setPlayPhase] = useState(1);
 
   const handleCompletePhase = () => {
     setPhase((prev) => prev + 1);
@@ -18,9 +20,25 @@ function App() {
       <h1 className="text-2xl text-white font-bold p-2">Fighting 2</h1>
       <div className="justify-center items-center flex bg-gray-600 min-h-screen">
         <div className="border-white border-2 p-2 bg-gray-500 border-solid w-250 h-140">
-          <p className="">Phase {phase}</p>
+          <div className="flex gap-4">
+            <p className="">Phase {phase}</p>
+            <button
+              onClick={() => setPhase((prev) => prev - 1)}
+              className="bg-gray-200"
+            >
+              Prev
+            </button>
+            <button
+              onClick={() => setPhase((prev) => prev + 1)}
+              className="bg-gray-200"
+            >
+              Next
+            </button>
+          </div>
+
           {phase == 1 && <PInput onPhaseComplete={handleCompletePhase} />}
           {phase == 2 && <Phase2 />}
+          {phase > 2 && playPhase == 1 ? <Loading /> : ""}
         </div>
       </div>
     </>
