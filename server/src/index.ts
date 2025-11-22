@@ -1,38 +1,24 @@
+import express, { type Express, type Request, type Response } from "express";
+import cors from "cors";
 import "dotenv/config";
 import { drizzle } from "drizzle-orm/node-postgres";
-import { strategies } from "./db/schema.js";
 import { is } from "drizzle-orm";
+import strategiesRoutes from "./routes/strategiesRoutes.js";
 
-const db = drizzle({
+export const db = drizzle({
   connection: process.env.DATABASE_URL!,
 });
 
-interface StrategyRequestBody {
-  title: string;
-  beats: string;
-  isBeatenBy: string;
-}
+const app: Express = express();
 
-const fetchStrategies = async () => {
-  try {
-    const strategiesData = await db.select().from(strategies);
+const port = 5000;
 
-    console.log("res: ", strategiesData);
-  } catch (error) {
-    console.error("Failed to fetch strategies:", error);
-  }
-};
+app.use(express.json());
 
-const sendStrategy = async (
-  req: Request<{}, {}, StrategyRequestBody>,
-  res: Response
-) => {
-  try {
-    const { title, beats, isBeatenBy } = req.body;
-    await db
-      .insert(strategies)
-      .values({ strategyName: title, beats: beats, isBeatenBy: isBeatenBy });
-  } catch (error) {
-    console.error("Failed to send strategy:", error);
-  }
-};
+app.use(cors());
+
+app.get("/api/strategies", strategiesRoutes);
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
