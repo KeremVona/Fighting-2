@@ -18,11 +18,13 @@ export const fetchStrategies = async (
     console.log("res: ", strategiesData);
 
     return res.status(200).json(strategiesData);
-  } catch (error: any) {
+  } catch (error) {
     console.error("Failed to fetch strategies:", error);
-    return res
-      .status(500)
-      .json({ message: "Could not fetch strategies", error: error.message });
+    if (error instanceof Error) {
+      return res
+        .status(500)
+        .json({ message: "Could not fetch strategies", error: error.message });
+    }
   }
 };
 
@@ -42,8 +44,11 @@ export const sendStrategy = async (
     });
   } catch (error) {
     console.error("Failed to send strategy:", error);
-    return res
-      .status(500)
-      .json({ message: "Failed to make strategy due to a server error." });
+    if (error instanceof Error) {
+      return res.status(500).json({
+        message: "Failed to make strategy due to a server error.",
+        error: error.message,
+      });
+    }
   }
 };
