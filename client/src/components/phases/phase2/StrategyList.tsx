@@ -1,15 +1,11 @@
-import axios from "axios";
 import StrategyCard from "./StrategyCard";
 import strategyData from "../../../data/strategies.json";
 import { useState } from "react";
-
-const API_URL = "http://localhost:5000/api/strategies";
 
 const StrategyList = () => {
   const ITEMS_PER_PAGE = 3;
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [chosenStrategy, setChosenStrategy] = useState();
 
   const totalPages = Math.ceil(strategyData.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -26,23 +22,6 @@ const StrategyList = () => {
     if (currentPage > 1) setCurrentPage((prev) => prev - 1);
   };
 
-  const handleFetch = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (chosenStrategy == "" || chosenStrategy == null) {
-      alert("No strategy chosen");
-      return;
-    }
-
-    try {
-      const response = await axios.post(API_URL, chosenStrategy);
-      console.log("response strategy list - ", response);
-    } catch (error) {
-      if (error instanceof Error) {
-        console.error("Error fetching strategies", error.message);
-      }
-    }
-  };
   return (
     <div className=" bg-slate-950 p-8">
       <div className="mx-auto max-w-7xl">

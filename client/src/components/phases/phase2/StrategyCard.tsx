@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 
@@ -8,6 +9,8 @@ interface StrategyCardProps {
   isBeatenBy: string;
 }
 
+const API_URL = "http://localhost:5000/api/strategies";
+
 const StrategyCard: React.FC<StrategyCardProps> = ({
   title,
   description,
@@ -15,14 +18,39 @@ const StrategyCard: React.FC<StrategyCardProps> = ({
   isBeatenBy,
 }) => {
   const [chosenStrategy, setChosenStrategy] = useState("");
+  const [chosenS, setChosenS] = useState({
+    title: title,
+    beats: beats,
+    isBeatenBy: isBeatenBy,
+  });
+  // e: React.FormEvent<HTMLFormElement>
+  const handleSend = async () => {
+    // e.preventDefault();
+
+    if (chosenStrategy == "" || chosenStrategy == null) {
+      alert("No strategy chosen");
+      return;
+    }
+
+    try {
+      const response = await axios.post(API_URL, chosenS);
+      console.log("response strategy list - ", response.data.strategy);
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error("Error fetching strategies", error.message);
+      }
+    }
+  };
 
   const handleClick = () => {
     setChosenStrategy(title);
+    setChosenS({ title, beats, isBeatenBy });
   };
 
   useEffect(() => {
     if (chosenStrategy !== "") {
       console.log(chosenStrategy);
+      handleSend();
     }
   }, [chosenStrategy]);
   return (

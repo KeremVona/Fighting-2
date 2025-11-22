@@ -44,7 +44,7 @@ DONE - go to the next phase (phase 2)
 
 2. ask the user to choose a strategy
 - DONE - a grid is shown with the strategies from the file
-- when the card is clicked, the strategy is chosen
+- DONE - when the card is clicked, the strategy is chosen
 
 3. the game is played for 5 seconds
 - show spinner
