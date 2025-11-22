@@ -1,6 +1,7 @@
 import StrategyCard from "./StrategyCard";
 import strategyData from "../../../data/strategies.json";
 import { useState } from "react";
+import useKeyboardNavigation from "../../../hooks/useKeyboardNavigation";
 
 interface StrategyListProps {
   handleCompletePhase: () => void;
@@ -25,6 +26,8 @@ const StrategyList: React.FC<StrategyListProps> = ({ handleCompletePhase }) => {
   const goToPrevPage = () => {
     if (currentPage > 1) setCurrentPage((prev) => prev - 1);
   };
+
+  useKeyboardNavigation(goToPrevPage, goToNextPage);
 
   return (
     <div className=" bg-slate-950 p-8">
