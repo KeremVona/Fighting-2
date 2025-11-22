@@ -1,19 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import PInput from "./components/phases/phase1/PInput";
 import Phase2 from "./components/phases/phase2/Phase2";
 import Loading from "./components/ui/Loading";
 
-// TO DO
-// Display phases according to the one currently playing 1/3
-
 function App() {
   const [phase, setPhase] = useState(2);
-  const [playPhase, setPlayPhase] = useState(1);
 
   const handleCompletePhase = () => {
     setPhase((prev) => prev + 1);
   };
+
+  useEffect(() => {
+    if (phase == 3) {
+      setTimeout(() => {
+        setPhase((prev) => prev + 1);
+      }, 5000);
+    }
+  }, [phase]);
 
   return (
     <>
@@ -37,8 +41,8 @@ function App() {
           </div>
 
           {phase == 1 && <PInput onPhaseComplete={handleCompletePhase} />}
-          {phase == 2 && <Phase2 />}
-          {phase > 2 && playPhase == 1 ? <Loading /> : ""}
+          {phase == 2 && <Phase2 handleCompletePhase={handleCompletePhase} />}
+          {phase == 3 && <Loading />}
         </div>
       </div>
     </>

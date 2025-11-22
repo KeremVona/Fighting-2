@@ -2,7 +2,11 @@ import StrategyCard from "./StrategyCard";
 import strategyData from "../../../data/strategies.json";
 import { useState } from "react";
 
-const StrategyList = () => {
+interface StrategyListProps {
+  handleCompletePhase: () => void;
+}
+
+const StrategyList: React.FC<StrategyListProps> = ({ handleCompletePhase }) => {
   const ITEMS_PER_PAGE = 3;
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -37,6 +41,7 @@ const StrategyList = () => {
               description={strategy.description}
               beats={strategy.beats}
               isBeatenBy={strategy.isBeatenBy}
+              onPhaseComplete={handleCompletePhase}
             />
           ))}
         </div>

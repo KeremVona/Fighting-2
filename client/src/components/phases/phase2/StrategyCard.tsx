@@ -7,6 +7,7 @@ interface StrategyCardProps {
   description: string;
   beats: string;
   isBeatenBy: string;
+  onPhaseComplete: (arg0: any) => void;
 }
 
 const API_URL = "http://localhost:5000/api/strategies";
@@ -16,6 +17,7 @@ const StrategyCard: React.FC<StrategyCardProps> = ({
   description,
   beats,
   isBeatenBy,
+  onPhaseComplete,
 }) => {
   const [chosenStrategy, setChosenStrategy] = useState("");
   const [chosenS, setChosenS] = useState({
@@ -35,6 +37,7 @@ const StrategyCard: React.FC<StrategyCardProps> = ({
     try {
       const response = await axios.post(API_URL, chosenS);
       console.log("response strategy list - ", response.data.strategy);
+      onPhaseComplete((prev: any) => prev + 1);
     } catch (error) {
       if (error instanceof Error) {
         console.error("Error fetching strategies", error.message);
