@@ -1,10 +1,14 @@
 import { useState } from "react";
 
+type SetPVVAction = React.Dispatch<React.SetStateAction<boolean>>;
+
 interface PInputProps {
   onPhaseComplete: () => void;
+  handlePVV: SetPVVAction;
+  pVV: boolean;
 }
 
-const PInput: React.FC<PInputProps> = ({ onPhaseComplete }) => {
+const PInput: React.FC<PInputProps> = ({ onPhaseComplete, handlePVV, pVV }) => {
   const [planningPhaseValues, setPlanningPhaseValues] = useState({
     altitude: undefined,
     speed: undefined,
@@ -61,9 +65,15 @@ const PInput: React.FC<PInputProps> = ({ onPhaseComplete }) => {
       />
       <button
         onClick={handleClick}
-        className="text-white bg-black border-white border p-1"
+        className="text-white bg-black border-white border p-1 mr-2"
       >
         Go to the Battle
+      </button>
+      <button
+        onClick={() => handlePVV(!pVV)}
+        className="text-white bg-black border-white border p-1"
+      >
+        Back
       </button>
     </>
   );
