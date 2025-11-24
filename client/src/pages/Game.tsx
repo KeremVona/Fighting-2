@@ -1,26 +1,29 @@
 import React, { useState } from "react";
 import PInput from "../components/phases/phase1/PInput";
+import Phase2 from "../components/phases/phase2/Phase2";
 
 interface GameProps {
   onPhaseComplete: () => void;
 }
 
+// pVVis - planning value visibility
+// sVVis - strategy value visibility
+
 const Game: React.FC<GameProps> = ({ onPhaseComplete }) => {
   const [pVVis, setPVVis] = useState(false);
+  const [sVVis, setSVVis] = useState(false);
 
   const handlePVV = () => {
     setPVVis(!pVVis);
   };
+
+  const handleSVV = () => {
+    setSVVis(!sVVis);
+  };
   return (
     <>
       <div className="bg-gray-800 h-129 p-2">
-        {pVVis ? (
-          <PInput
-            onPhaseComplete={onPhaseComplete}
-            handlePVV={setPVVis}
-            pVV={pVVis}
-          />
-        ) : (
+        {!pVVis && !sVVis && (
           <>
             <div className="mb-10 flex justify-between items-center">
               <div>
@@ -30,9 +33,15 @@ const Game: React.FC<GameProps> = ({ onPhaseComplete }) => {
               <div className="">
                 <button
                   onClick={handlePVV}
-                  className="text-white bg-lime-900 p-1"
+                  className="text-white bg-lime-900 p-1 mr-2"
                 >
                   phase 1 values
+                </button>
+                <button
+                  onClick={handleSVV}
+                  className="text-white bg-lime-900 p-1"
+                >
+                  phase 2 values
                 </button>
               </div>
             </div>
@@ -57,6 +66,24 @@ const Game: React.FC<GameProps> = ({ onPhaseComplete }) => {
               </div>
             </div>
           </>
+        )}
+        {pVVis ? (
+          <PInput
+            onPhaseComplete={onPhaseComplete}
+            handlePVV={setPVVis}
+            pVV={pVVis}
+          />
+        ) : (
+          <></>
+        )}
+        {sVVis ? (
+          <Phase2
+            handleCompletePhase={onPhaseComplete}
+            handleSVV={setSVVis}
+            sVV={sVVis}
+          />
+        ) : (
+          <></>
         )}
       </div>
     </>
