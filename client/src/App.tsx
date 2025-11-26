@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PInput from "./components/phases/phase1/PInput";
 import Phase2 from "./components/phases/phase2/Phase2";
 import Loading from "./components/ui/Loading";
 import PhaseSwitcher from "./components/developer_tools/PhaseSwitcher";
+import MainMenu from "./pages/MainMenu";
 import Game from "./pages/Game";
 
 function App() {
@@ -25,16 +27,15 @@ function App() {
 
   return (
     <>
-      <h1 className="text-2xl text-white font-bold p-2">Fighting 2</h1>
-      <div className="justify-center items-center flex bg-gray-600 min-h-screen">
-        <div className="border-white border-2 p-2 bg-gray-500 border-solid w-250 h-140">
-          <PhaseSwitcher phase={phase} setPhase={setPhase} />
-          {/* {phase == 1 && <PInput onPhaseComplete={handleCompletePhase} />}
-          {phase == 2 && <Phase2 handleCompletePhase={handleCompletePhase} />}
-          {phase == 3 && <Loading />} */}
-          <Game onPhaseComplete={handleCompletePhase} />
-        </div>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainMenu />} />
+          <Route
+            path="/game"
+            element={<Game onPhaseComplete={handleCompletePhase} />}
+          />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

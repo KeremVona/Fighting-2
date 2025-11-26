@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import PInput from "../components/phases/phase1/PInput";
 import Phase2 from "../components/phases/phase2/Phase2";
 
@@ -20,6 +21,8 @@ const Game: React.FC<GameProps> = ({ onPhaseComplete }) => {
   const handleSVV = () => {
     setSVVis(!sVVis);
   };
+
+  const handleStrategyRedir = () => {};
   return (
     <>
       <div className="bg-gray-800 h-129 p-2">
@@ -46,24 +49,33 @@ const Game: React.FC<GameProps> = ({ onPhaseComplete }) => {
               </div>
             </div>
             <div className="grid grid-cols-3">
-              <div className="bg-gray-900 h-40 w-40 justify-center items-center flex">
+              <Link
+                to="/"
+                className="bg-gray-900 h-40 w-40 justify-center items-center flex"
+              >
                 <div className="text-center">
                   <p className="font-bold">Jets</p>
                   <p>number</p>
                 </div>
-              </div>
-              <div className="bg-gray-900 h-40 w-40 justify-center items-center flex">
+              </Link>
+              <Link
+                to="/"
+                className="bg-gray-900 h-40 w-40 justify-center items-center flex"
+              >
                 <div className="text-center">
                   <p className="font-bold">Interceptors</p>
                   <p>number</p>
                 </div>
-              </div>
-              <div className="bg-gray-900 h-40 w-40 justify-center items-center flex">
+              </Link>
+              <Link
+                to="/"
+                className="bg-gray-900 h-40 w-40 justify-center items-center flex"
+              >
                 <div className="text-center">
                   <p className="font-bold">Light Fighters</p>
                   <p>number</p>
                 </div>
-              </div>
+              </Link>
             </div>
           </>
         )}
