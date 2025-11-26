@@ -7,6 +7,7 @@ import Loading from "./components/ui/Loading";
 import PhaseSwitcher from "./components/developer_tools/PhaseSwitcher";
 import MainMenu from "./pages/MainMenu";
 import Game from "./pages/Game";
+import Strategy from "./pages/Strategy";
 
 function App() {
   const [phase, setPhase] = useState(2);
@@ -15,8 +16,6 @@ function App() {
     setPhase((prev) => prev + 1);
   };
 
-  // TO DO
-  // FIX changing phase when on phases other than phase 3
   useEffect(() => {
     if (phase == 3) {
       setTimeout(() => {
@@ -33,6 +32,10 @@ function App() {
           <Route
             path="/game"
             element={<Game onPhaseComplete={handleCompletePhase} />}
+          />
+          <Route
+            path="/strategy/:id"
+            element={<Strategy handleCompletePhase={handleCompletePhase} />}
           />
         </Routes>
       </BrowserRouter>
@@ -56,13 +59,11 @@ DONE - go to the next phase (phase 2)
 - display on screen
 
 2. ask the user to choose a strategy
-- DONE - a grid is shown with the strategies from the file
-- DONE - when the card is clicked, the strategy is chosen
+- a grid is shown with the strategies from the file
+- when the card is clicked, the strategy is chosen
 
 3. the game is played for 5 seconds
-- DONE - show ongoing combat text
-
-4. the game stops and repeat from step 1 until the game is complete
+- show ongoing combat text
 ---------------------------------------
 ## phase 2 advanced
 
