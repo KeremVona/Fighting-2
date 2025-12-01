@@ -1,0 +1,42 @@
+[
+  {
+    "strategy": "Manuever",
+    "fighter": "Lightweight Dogfighter / Interceptor"
+  },
+  {
+    "strategy": "Boom-and-Zoom",
+    "fighter": "Heavy High-Altitude Interceptor / Superiority Fighter"
+  },
+  {
+    "strategy": "Energy Fighting",
+    "fighter": "Tactical Fighter / Energy-Retention Specialist"
+  },
+  {
+    "strategy": "Stealth Ambush",
+    "fighter": "Fifth-Generation Stealth Fighter"
+  },
+  {
+    "strategy": "Beyond Visual Range",
+    "fighter": "Long-Range Interceptor"
+  },
+  {
+    "strategy": "Swarm Tactics",
+    "fighter": "Mass-Produced Light Attack"
+  },
+  {
+    "strategy": "Head-On Assault",
+    "fighter": "Heavy Multi-Role Fighter / Gun Platform"
+  },
+  {
+    "strategy": "Electronic Warfare",
+    "fighter": "Dedicated Electronic Attack Aircraft"
+  },
+  {
+    "strategy": "Defensive Turtle",
+    "fighter": "Heavy Armored Attack Aircraft"
+  },
+  {
+    "strategy": "Drag and Bag",
+    "fighter": "Wingman-Optimized Multi-Role Fighters"
+  }
+]

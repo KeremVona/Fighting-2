@@ -36,18 +36,7 @@ const StrategyList: React.FC<StrategyListProps> = ({ handleCompletePhase }) => {
           Aerial Combat Tactics
         </h1>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {chosenStrategies.map((strategy, index) => (
-            <StrategyCard
-              key={index}
-              title={strategy.title}
-              description={strategy.description}
-              beats={strategy.beats}
-              isBeatenBy={strategy.isBeatenBy}
-              onPhaseComplete={handleCompletePhase}
-            />
-          ))}
-        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
 
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-6 mt-4">

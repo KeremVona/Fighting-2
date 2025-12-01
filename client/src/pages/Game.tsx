@@ -1,11 +1,32 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PInput from "../components/phases/phase1/PInput";
-import Phase2 from "../components/phases/phase2/Phase2";
+import fighterStrategies from "../data/fighterStrategies.json";
+import StrategyCard from "../components/phases/phase2/StrategyCard";
 
 interface GameProps {
   onPhaseComplete: () => void;
 }
+
+/*
+Maneuver - Lightweight Dogfighter / Interceptor
+Boom-and-Zoom - Heavy High-Altitude Interceptor / Superiority Fighter
+Energy Fighting - Tactical Fighter / Energy-Retention Specialist
+Stealth Ambush - Fifth-Generation Stealth Fighter
+Beyond Visual Range - Long-Range Interceptor
+Swarm Tactics - Mass-Produced Light Attack / Trainer Jet
+Head-On Assault - Heavy Multi-Role Fighter / Gun Platform
+Electronic Warfare - Dedicated Electronic Attack Aircraft
+Defensive Turtle - Strike Fighter / Heavy Attack Aircraft
+Drag and Bag - Wingman-Optimized Multi-Role Fighters
+
+--------------
+
+enemy conditions
+
+- enemy might be running
+- enemy might be striking
+*/
 
 // pVVis - planning value visibility
 // sVVis - strategy value visibility
@@ -59,15 +80,13 @@ const Game: React.FC<GameProps> = ({ onPhaseComplete }) => {
                       <p>number</p>
                     </div>
                   </Link>
-                  <Link
-                    to="/"
-                    className="bg-gray-900 h-40 w-40 justify-center items-center flex"
-                  >
-                    <div className="text-center">
-                      <p className="font-bold">Light Fighters</p>
-                      <p>number</p>
-                    </div>
-                  </Link>
+                  {fighterStrategies.map((strategy, index) => (
+                    <StrategyCard
+                      key={index}
+                      strategy={strategy.strategy}
+                      fighter={strategy.fighter}
+                    />
+                  ))}
                 </div>
               </>
             )}
