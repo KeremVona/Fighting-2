@@ -32,6 +32,7 @@ const HandleNavigation = () => {
             key={index}
             strategy={strategy.strategy}
             fighter={strategy.class}
+            description={strategy.description}
           />
         ))}
       </div>
