@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import PInput from "../components/phases/phase1/PInput";
-import fighterStrategies from "../data/fighterStrategies.json";
-import StrategyCard from "../components/phases/phase2/StrategyCard";
+import HandleNavigation from "../components/ui/game/HandleNavigation";
 
 interface GameProps {
   onPhaseComplete: () => void;
@@ -37,8 +35,6 @@ const Game: React.FC<GameProps> = ({ onPhaseComplete }) => {
   const handlePVV = () => {
     setPVVis(!pVVis);
   };
-
-  const handleStrategyRedir = () => {};
   return (
     <>
       <h1 className="text-2xl text-white font-bold p-2">Fighting 2</h1>
@@ -61,33 +57,7 @@ const Game: React.FC<GameProps> = ({ onPhaseComplete }) => {
                     </button>
                   </div>
                 </div>
-                <div className="grid grid-cols-3">
-                  <Link
-                    to="/"
-                    className="bg-gray-900 h-40 w-40 justify-center items-center flex"
-                  >
-                    <div className="text-center">
-                      <p className="font-bold">Jets</p>
-                      <p>number</p>
-                    </div>
-                  </Link>
-                  <Link
-                    to="/"
-                    className="bg-gray-900 h-40 w-40 justify-center items-center flex"
-                  >
-                    <div className="text-center">
-                      <p className="font-bold">Interceptors</p>
-                      <p>number</p>
-                    </div>
-                  </Link>
-                  {fighterStrategies.map((strategy, index) => (
-                    <StrategyCard
-                      key={index}
-                      strategy={strategy.strategy}
-                      fighter={strategy.class}
-                    />
-                  ))}
-                </div>
+                <HandleNavigation />
               </>
             )}
             {pVVis ? (
