@@ -1,42 +1,62 @@
 [
   {
     "strategy": "Manuever",
-    "fighter": "Lightweight Dogfighter / Interceptor"
+    "class": "Lightweight Dogfighter / Interceptor",
+    "description": "Excellent turn rate, high thrust-to-weight ratio, very agile.",
+    "fighter_airplane_names": ["F-16", "MiG-29"]
   },
   {
     "strategy": "Boom-and-Zoom",
-    "fighter": "Heavy High-Altitude Interceptor / Superiority Fighter"
+    "class": "Heavy High-Altitude Interceptor / Superiority Fighter",
+    "description": "Great speed, high service ceiling, powerful engine for quick climbs.",
+    "fighter_airplane_names": ["F-15", "Su-27"]
   },
   {
     "strategy": "Energy Fighting",
-    "fighter": "Tactical Fighter / Energy-Retention Specialist"
+    "class": "Tactical Fighter / Energy-Retention Specialist",
+    "description": "Maintains speed well in turns, excellent climb rate, focuses on altitude advantage.",
+    "fighter_airplane_names": ["F-14", "Typhoon"]
   },
   {
     "strategy": "Stealth Ambush",
-    "fighter": "Fifth-Generation Stealth Fighter"
+    "class": "Fifth-Generation Stealth Fighter",
+    "description": "Low observable design (reduced radar cross-section), internal weapons bays.",
+    "fighter_airplane_names": ["F-22", "J-20"]
   },
   {
     "strategy": "Beyond Visual Range",
-    "fighter": "Long-Range Interceptor"
+    "class": "Long-Range Interceptor",
+    "description": "Large radar, high-speed flight profile, capacity for heavy BVR missile loads.",
+    "fighter_airplane_names": ["Su-35", "F/A-18E/F"]
   },
   {
     "strategy": "Swarm Tactics",
-    "fighter": "Mass-Produced Light Attack"
+    "class": "Mass-Produced Light Attack / Trainer Jet",
+    "description": "Cheap to manufacture, simple systems, can be deployed in large numbers.",
+    "fighter_airplane_names": ["A-4 Skyhawk", "L-39 Albatros"]
   },
   {
     "strategy": "Head-On Assault",
-    "fighter": "Heavy Multi-Role Fighter / Gun Platform"
+    "class": "Heavy Multi-Role Fighter / Gun Platform",
+    "description": "Durable airframe, very heavy cannon armament, robust systems.",
+    "fighter_airplane_names": ["A-10 Warthog", "Su-25"]
   },
   {
     "strategy": "Electronic Warfare",
-    "fighter": "Dedicated Electronic Attack Aircraft"
+    "class": "Dedicated Electronic Attack Aircraft",
+    "description": "Equipped with sophisticated jamming pods and electronic countermeasures systems.",
+    "fighter_airplane_names": ["EA-18G Growler"]
   },
   {
     "strategy": "Defensive Turtle",
-    "fighter": "Heavy Armored Attack Aircraft"
+    "class": "Strike Fighter / Heavy Attack Aircraft",
+    "description": "Extremely durable airframe, substantial armor plating, large payload capacity.",
+    "fighter_airplane_names": ["F-117 Nighthawk", "Su-34"]
   },
   {
     "strategy": "Drag and Bag",
-    "fighter": "Wingman-Optimized Multi-Role Fighters"
+    "class": "Wingman-Optimized Multi-Role Fighters",
+    "description": "Versatile fighters with excellent data-linking and communication systems. (Often two identical aircraft, e.g., F-35 paired with F-35)",
+    "fighter_airplane_names": ["F-35"]
   }
 ]

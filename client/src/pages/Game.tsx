@@ -9,8 +9,8 @@ interface GameProps {
 }
 
 /*
-Maneuver - Lightweight Dogfighter / Interceptor
-Boom-and-Zoom - Heavy High-Altitude Interceptor / Superiority Fighter
+Maneuver - Lightweight Dogfighter / Interceptor - F-16, MiG-29
+Boom-and-Zoom - Heavy High-Altitude Interceptor / Superiority Fighter - F-15, Su-27
 Energy Fighting - Tactical Fighter / Energy-Retention Specialist
 Stealth Ambush - Fifth-Generation Stealth Fighter
 Beyond Visual Range - Long-Range Interceptor
@@ -84,7 +84,7 @@ const Game: React.FC<GameProps> = ({ onPhaseComplete }) => {
                     <StrategyCard
                       key={index}
                       strategy={strategy.strategy}
-                      fighter={strategy.fighter}
+                      fighter={strategy.class}
                     />
                   ))}
                 </div>
