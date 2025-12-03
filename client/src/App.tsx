@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PInput from "./components/phases/phase1/PInput";
-import Phase2 from "./components/phases/phase2/Phase2";
-import Loading from "./components/ui/Loading";
-import PhaseSwitcher from "./components/developer_tools/PhaseSwitcher";
 import MainMenu from "./pages/MainMenu";
 import Game from "./pages/Game";
 import Strategy from "./pages/Strategy";
+import BattleMap from "./components/phases/phase3/BattleMap";
 
 function App() {
   const [phase, setPhase] = useState(2);
@@ -37,6 +34,7 @@ function App() {
             path="/strategy/:id"
             element={<Strategy handleCompletePhase={handleCompletePhase} />}
           />
+          <Route path="/test" element={<BattleMap />} />
         </Routes>
       </BrowserRouter>
     </>
