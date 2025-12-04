@@ -20,7 +20,7 @@ const INITIAL_PLANES: Plane[] = [
     team: "friendly",
     hp: 100,
     maxHp: 100,
-    name: "Viper 1",
+    name: "Friendly 1",
     isDead: false,
   },
   {
@@ -30,7 +30,7 @@ const INITIAL_PLANES: Plane[] = [
     team: "friendly",
     hp: 80,
     maxHp: 100,
-    name: "Viper 2",
+    name: "Friendly 2",
     isDead: false,
   },
   {
@@ -40,7 +40,7 @@ const INITIAL_PLANES: Plane[] = [
     team: "enemy",
     hp: 100,
     maxHp: 100,
-    name: "Bandit A",
+    name: "Enemy 1",
     isDead: false,
   },
   {
@@ -50,7 +50,7 @@ const INITIAL_PLANES: Plane[] = [
     team: "enemy",
     hp: 100,
     maxHp: 100,
-    name: "Bandit B",
+    name: "Enemy 2",
     isDead: false,
   },
 ];
@@ -141,7 +141,7 @@ export default function BattleMap() {
             <div
               key={plane.id}
               onClick={() => handlePlaneClick(plane)}
-              className={`absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-all duration-300
+              className={`absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-allft duration-300
                 ${plane.isDead ? "opacity-30 grayscale" : "hover:scale-110"}
               `}
               style={{ left: `${plane.x}%`, top: `${plane.y}%` }}
